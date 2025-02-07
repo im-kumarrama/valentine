@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6; /* Soft pink background */
+            margin: 0;
+        }
+
+        .popup {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        h2 {
+            color: #ff4d4d; /* Romantic red */
+            font-size: 24px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .yes-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .no-btn {
+            background-color: gray;
+            color: white;
+            position: relative;
+        }
+
+        .no-btn:hover {
+            position: absolute;
+            left: calc(1% + (10% * Math.random()));
+            top: calc(1% + (10% * Math.random()));
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup">
+        <h2>Will you be my Valentine? ❤️</h2>
+        <div class="buttons">
+            <button class="btn yes-btn" onclick="accept()">Yes</button>
+            <button class="btn no-btn" id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", function () {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        function accept() {
+            alert("Yay! You made my day! ❤️😊");
+        }
+    </script>
+
+</body>
+</html>
